@@ -7,7 +7,7 @@ export const getRestaurant = () => async (dispatch) => {
   try {
     const restaurantList = await axios({
       method: "GET",
-      url: "http://localhost:4000/restaurant/?city=NCR",
+      url: "https://zomato-master-server-main.herokuapp.com/restaurants/?city=NCR",
     });
 
     return dispatch({ type: GET_RESTAURANT, payload: restaurantList.data });
@@ -20,7 +20,7 @@ export const getSpecificRestaurant = (_id) => async (dispatch) => {
   try {
     const restaurnat = await axios({
       method: "GET",
-      url: `http://localhost:4000/restaurant/${_id}`,
+      url: `https://zomato-master-server-main.herokuapp.com/restaurants/${_id}`,
     });
 
     return dispatch({
